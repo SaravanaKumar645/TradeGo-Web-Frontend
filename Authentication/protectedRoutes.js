@@ -1,26 +1,5 @@
 import router from "next/router";
 import isProtected from "./routeCheck";
-import Notifications from "../Components/Notifications";
-// const withAuth = (Component) => {
-//   const Auth = async (props) => {
-//     // /If user is logged in, return Original component
-//     if (isProtected()) {
-//       return <Component {...props} />;
-//     }
-
-//     // /If user is not logged in, return Login component
-//     return <Login_user />;
-//   };
-
-//   // /Copy getInitial props so it will run as well
-//   if (Component.getInitialProps) {
-//     Auth.getInitialProps = Component.getInitialProps;
-//   }
-
-//   return Auth;
-// };
-
-// export default withAuth;
 
 const withAuth = (WrappedComponent) => {
   return (props) => {

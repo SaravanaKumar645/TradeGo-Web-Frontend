@@ -5,6 +5,8 @@ import router from "next/router";
 import { toast, ToastContainer } from "react-toastify";
 import Notifications from "./Notifications";
 import Loader from "./Loader";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faEye, faEyeSlash } from "@fortawesome/free-solid-svg-icons";
 
 const Register = () => {
   const [name, setName] = useState("");
@@ -12,35 +14,35 @@ const Register = () => {
   const [password, setPassword] = useState("");
   const [mobile, setMobile] = useState();
   const [isLoading, setLoading] = useState(false);
-
+  const [showPassWord, setShowPassword] = useState(false);
   useEffect(() => () => setLoading(false), []);
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    //setLoading(true);
-    // axios({
-    //   url: "https://restaurant-web-server.herokuapp.com/api/register-user",
-    //   method: "POST",
-    //   data: { name: name, email: email, password: password, mobile: mobile },
-    // })
-    //   .then((result) => {
-    //     if (result.status === 200) {
-    //       console.log(result.data.msg);
-    //       console.log(result.data);
-    //       Notifications.notifySuccess(result.data.msg);
-    //       localStorage.setItem("token", result.data.accessToken);
-    //       router.replace("/trade-go/home");
-    //     } else if (result.status === 202) {
-    //       setLoading(false);
-    //       console.log(result.data.msg);
-    //       Notifications.notifyError(result.data.msg);
-    //     }
-    //   })
-    //   .catch((err) => {
-    //     setLoading(false);
-    //     console.log(err);
-    //     Notifications.notifyError("Something went wrong .Try Again !");
-    //   });
+    setLoading(true);
+    axios({
+      url: "https://tradego-web-server.herokuapp.com/api/register-user",
+      method: "POST",
+      data: { name: name, email: email, password: password, mobile: mobile },
+    })
+      .then((result) => {
+        if (result.status === 200) {
+          console.log(result.data.msg);
+          console.log(result.data);
+          Notifications.notifySuccess(result.data.msg);
+          localStorage.setItem("token", result.data.accessToken);
+          router.replace("/trade-go/home");
+        } else if (result.status === 202) {
+          setLoading(false);
+          console.log(result.data.msg);
+          Notifications.notifyError(result.data.msg);
+        }
+      })
+      .catch((err) => {
+        setLoading(false);
+        console.log(err);
+        Notifications.notifyError("Something went wrong .Try Again !");
+      });
   };
 
   return (
@@ -69,15 +71,22 @@ const Register = () => {
           placeholder="Email"
           onChange={(e) => setEmail(e.target.value)}
         ></input>
-        <input
-          type="password"
-          minLength={5}
-          maxLength={10}
-          required
-          value={password}
-          placeholder="Password"
-          onChange={(e) => setPassword(e.target.value)}
-        ></input>
+        <div className={styles.passwordWrapper}>
+          <input
+            type={showPassWord ? "text" : "password"}
+            minLength={5}
+            maxLength={10}
+            required
+            value={password}
+            placeholder="Password"
+            onChange={(e) => setPassword(e.target.value)}
+          ></input>
+          <FontAwesomeIcon
+            className={styles.eyeIcon}
+            icon={showPassWord ? faEyeSlash : faEye}
+            onClick={(e) => setShowPassword((value) => !value)}
+          ></FontAwesomeIcon>
+        </div>
         <input
           type="tel"
           maxLength={10}

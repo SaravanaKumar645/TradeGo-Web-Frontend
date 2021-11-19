@@ -10,7 +10,7 @@ const Register_user = () => {
     const redirect = isProtected();
     if (redirect) {
       Notifications.notifySuccess("Cached User details. Login success !");
-      router.replace("/homepage/menu_items");
+      router.replace("/trade-go/home");
     }
   }, []);
   return (

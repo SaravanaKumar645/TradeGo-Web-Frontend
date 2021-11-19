@@ -17,33 +17,33 @@ const Login = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     setLoading(true);
-    // axios({
-    //   url: "https://restaurant-web-server.herokuapp.com/api/login-user",
-    //   method: "POST",
-    //   data: { email: email, password: password },
-    // })
-    //   .then((result) => {
-    //     if (result.status === 200) {
-    //       console.log(result.data.msg);
-    //       console.log(result.data);
-    //       Notifications.notifySuccess(result.data.msg);
-    //       localStorage.setItem("token", result.data.accessToken);
-    //       router.replace("/trade-go/home");
-    //     } else if (result.status === 202) {
-    //       setLoading(false);
-    //       Notifications.notifyError(result.data.msg);
-    //       console.log(result.data.msg);
-    //     } else if (result.status === 203) {
-    //       setLoading(false);
-    //       Notifications.notifyError(result.data.msg);
-    //       console.log(result.data.msg);
-    //     }
-    //   })
-    //   .catch((err) => {
-    //     setLoading(false);
-    //     console.log(err);
-    //     Notifications.notifyError("Something went wrong .Try Again !");
-    //   });
+    axios({
+      url: "https://tradego-web-server.herokuapp.com/api/login-user",
+      method: "POST",
+      data: { email: email, password: password },
+    })
+      .then((result) => {
+        if (result.status === 200) {
+          console.log(result.data.msg);
+          console.log(result.data);
+          Notifications.notifySuccess(result.data.msg);
+          localStorage.setItem("token", result.data.accessToken);
+          router.replace("/trade-go/home");
+        } else if (result.status === 202) {
+          setLoading(false);
+          Notifications.notifyError(result.data.msg);
+          console.log(result.data.msg);
+        } else if (result.status === 203) {
+          setLoading(false);
+          Notifications.notifyError(result.data.msg);
+          console.log(result.data.msg);
+        }
+      })
+      .catch((err) => {
+        setLoading(false);
+        console.log(err);
+        Notifications.notifyError("Something went wrong .Try Again !");
+      });
   };
 
   return (
@@ -74,7 +74,7 @@ const Login = () => {
           onChange={(e) => setPassword(e.target.value)}
         ></input>
         <button type="submit">Login</button>
-        <Link href="#">
+        <Link href="/forgot_password">
           <a className={styles.forgotPass}>
             Forgot your Password ?
             <strong className={styles.forgotPassHR}></strong>{" "}

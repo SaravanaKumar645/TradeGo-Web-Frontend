@@ -1,11 +1,11 @@
-import Head from "next/head";
-import Login from "../Components/Login";
+import React from "react";
+import ForgotPassword from "../Components/ForgotPassword";
 import isProtected from "../Authentication/routeCheck";
 import router from "next/router";
 import { useEffect } from "react";
 import Notifications from "../Components/Notifications";
-
-const Login_user = () => {
+import Head from "next/head";
+const Forgot_Password_Page = () => {
   useEffect(() => {
     const redirect = isProtected();
     if (redirect) {
@@ -15,9 +15,10 @@ const Login_user = () => {
   }, []);
   return (
     <>
-      <Login />
+      <ForgotPassword />
+
       <Head>
-        <title>Login</title>
+        <title>Forgot Password</title>
 
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
         <script
@@ -29,4 +30,4 @@ const Login_user = () => {
   );
 };
 
-export default Login_user;
+export default Forgot_Password_Page;

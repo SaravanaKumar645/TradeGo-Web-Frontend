@@ -6,6 +6,7 @@ export default function isProtected() {
   if (localStorage.getItem("token")) {
     const token = localStorage.getItem("token");
     const user = jwt.decode(token);
+    console.log(typeof user);
     console.log(user);
     var expDate = new Date(user.exp * 1000);
     var currentDate = new Date();
