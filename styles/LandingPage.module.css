@@ -42,3 +42,51 @@
   background-color: white;
   box-shadow: 1px 1px 20px white;
 }
+
+/* For Small Screens */
+@media screen and (max-width: 991px) {
+  .container {
+    height: 100vh;
+    display: flex;
+    padding-top: 100px;
+    flex-direction: column;
+    align-items: center;
+    background-color: #3b1f88;
+  }
+  .container h1 {
+    color: white;
+    letter-spacing: 5px;
+    font-size: 2rem;
+  }
+  .container p {
+    color: white;
+    margin-top: 30px;
+    font-size: 14pt;
+    padding-bottom: 10px;
+    border-bottom: 2px solid rgba(255, 255, 255, 0.7);
+  }
+  .container .navigationButtons {
+    display: flex;
+    flex-direction: column;
+    gap: 7ch;
+    align-items: center;
+    margin-top: 90px;
+    justify-content: center;
+  }
+  .container .navigationButtons button {
+    border-radius: 6px;
+    color: black;
+    border: none;
+    background-color: white;
+    padding: 9px 0 9px 0;
+    cursor: pointer;
+    font-size: 13pt;
+    font-weight: bold;
+    width: 200px;
+  }
+  .container .navigationButtons button:hover {
+    z-index: 50;
+    background-color: white;
+    box-shadow: 1px 1px 20px white;
+  }
+}

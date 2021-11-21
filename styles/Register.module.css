@@ -73,6 +73,7 @@
   border: 2px solid #3b1f88;
 }
 .container .loginForm button {
+  text-shadow: 0 0 8px white;
   padding: 10px;
   border: none;
   color: white;
@@ -107,4 +108,120 @@
   position: absolute;
   margin-left: 120px;
   color: #3b1f88;
+}
+
+/* /For smaller Screens */
+@media screen and (max-width: 991px) {
+  .container {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 2ch;
+    align-items: center;
+    background-color: #3b1f88;
+    margin: 0;
+    padding: 0;
+  }
+  .container h1 {
+    display: flex;
+    color: whitesmoke;
+    font-size: 1.5rem;
+  }
+  .container p {
+    font-size: 10pt;
+    display: flex;
+    color: whitesmoke;
+  }
+  .container p span {
+    color: white;
+    width: max-content;
+    font-weight: bold;
+    display: flex;
+    flex-direction: column;
+    gap: 0.4ch;
+    cursor: pointer;
+    transition: transform 400ms;
+    overflow: hidden;
+  }
+  .container p span:hover {
+    text-shadow: 0 0 8px rgba(255, 255, 255, 0.9);
+    background: none;
+  }
+  .container p span .hr {
+    padding: 0;
+    margin: 0;
+    box-shadow: 0 0 8px rgba(255, 255, 255, 0.9);
+    border-top: 3px solid white;
+    transform: translate3d(-110%, 0, 0);
+    transition: transform 0.5s;
+  }
+  .container p span:hover .hr {
+    transform: translate3d(0, 0, 0);
+  }
+  .container .loginForm {
+    height: 450px;
+    width: 290px;
+    border-radius: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 3ch;
+    z-index: 1;
+    flex-direction: column;
+    background-color: white;
+  }
+  .container .loginForm input {
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #3b1f88;
+    color: black;
+    font-size: 12pt;
+    outline: none;
+    width: 240px;
+    background-color: white;
+  }
+  .container .loginForm input:focus,
+  .container.loginForm input:hover {
+    box-shadow: 0 0 10px rgb(94, 74, 180);
+    border: 2px solid #3b1f88;
+  }
+  .container .loginForm button {
+    box-shadow: 8px 4px 15px #725cad;
+    padding: 10px;
+    border: none;
+    color: white;
+    background-color: #3b1f88;
+    width: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 8px;
+    height: 40px;
+    font-size: 12pt;
+    cursor: pointer;
+    font-weight: bold;
+    box-shadow: 8px 4px 15px #725cad;
+  }
+  .container .loginForm button:hover {
+    box-shadow: 0 0 15px rgb(80, 63, 158);
+    border: 2px solid #3b1f88;
+    background: white;
+    color: #3b1f88;
+  }
+  .loginForm .passwordWrapper {
+    display: flex;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+    height: fit-content;
+    justify-content: center;
+  }
+  .passwordWrapper .eyeIcon {
+    height: 20px;
+    width: 20px;
+    position: absolute;
+    margin-left: 90px;
+    color: #3b1f88;
+  }
 }

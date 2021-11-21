@@ -24,7 +24,7 @@ const ForgotPassword = () => {
     setLoading(true);
     e.preventDefault();
     axios({
-      url: "http://localhost:4000/api/send-reset-mail",
+      url: "https://tradego-web-server.herokuapp.com/api/send-reset-mail",
       method: "POST",
       data: { email: email },
     })
@@ -59,7 +59,7 @@ const ForgotPassword = () => {
     if (enteredToken === token) {
       setLoading(true);
       axios({
-        url: "http://localhost:4000/api/update-user-password",
+        url: "https://tradego-web-server.herokuapp.com/api/update-user-password",
         method: "POST",
         data: { email: email, token: token, newPassword: password },
       })

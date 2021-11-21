@@ -1,0 +1,6 @@
+.container {
+  transition: margin-top 800ms ease-in;
+}
+.containerTopChanged {
+  transition: margin-top 450ms ease-out;
+}

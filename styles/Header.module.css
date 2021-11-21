@@ -1,74 +1,305 @@
-.header {
+.navContainer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
   position: sticky;
+  height: 90px;
   top: 0;
-  left: 0;
-  right: 0;
-  overflow: hidden;
-  display: flex;
-  align-items: center;
-  justify-content: space-around;
-  /* padding: 20px 50px 20px 80px; */
-  background-color: #1f70db;
-  height: 70px;
   width: 100%;
-  z-index: 100;
-  flex-wrap: wrap;
-  box-shadow: 4px 4px 10px rgb(65, 62, 62);
-  border-bottom: 2px solid rgb(7, 84, 199);
+  z-index: 888 !important;
+  background-color: #3b1f88;
+  box-shadow: 0 5px 8px rgb(37, 38, 49);
+  margin-bottom: 30px;
 }
-.header h2 span {
-  cursor: pointer;
-  text-shadow: 0 0 7px rgba(255, 255, 255, 0.9);
-  color: whitesmoke;
-}
-.header ul {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 4ch;
-  list-style-type: none;
-}
-.header ul li {
-  min-width: 20px;
-  border-radius: 4px;
-  font-size: 11pt;
-  padding: 0 10px 0 10px;
+.navContainer h2 {
   display: flex;
   align-items: center;
   justify-content: center;
-}
-.header ul li .navTab {
-  font-weight: bold;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border-radius: 5px;
+  row-gap: 2ch;
+  column-gap: 2ch;
   color: white;
-  opacity: 0.8;
-  padding-left: 10px;
-  padding-right: 10px;
+  margin-left: 40px;
+  text-shadow: 0 0 8px white;
+}
+.navContainer strong {
+  height: 50px;
+  width: 50px;
   padding-top: 5px;
-  padding-bottom: 5px;
-  cursor: pointer;
-}
-.header ul li .navTab:hover {
-  opacity: 1;
-  background: rgba(255, 255, 255, 0.2);
-}
-.header ul li .navTabFocused {
+  text-shadow: none;
+  background-color: #3b1f88;
+  border: 3px solid white;
+  color: white;
+  text-align: center;
   font-weight: bold;
+  border-radius: 50%;
+}
+.navContainer .navIcon {
+  display: none;
+}
+.navContainer .navUl {
+  margin-right: 50px;
+  list-style-type: none;
+  display: flex;
+  gap: 5ch;
+  align-items: center;
+  transition: transform 700ms ease;
+  /* justify-content: last baseline; */
+}
+.navContainer .navUl .liTab {
+  font-weight: bold;
+  min-width: 80px;
+  color: white;
+  cursor: pointer;
+  text-shadow: 0 0 4px white;
+  line-height: 20px;
+  padding: 5px;
   display: flex;
   align-items: center;
   justify-content: center;
-  border-radius: 5px;
-  color: black;
-  padding-left: 10px;
-  padding-right: 10px;
-  padding-top: 5px;
-  padding-bottom: 5px;
-  cursor: pointer;
-  background: white;
-  box-shadow: 0 0 10px white;
+  text-align: center;
 }
-.header ul li .navTabFocused:hover {
-  opacity: 0.9;
+.navContainer .navUl .liTab:hover {
+  text-shadow: none;
+  background-color: white;
+  box-shadow: 0 0 9px white;
+  color: black;
+  border-radius: 5px;
+}
+.navContainer .navUl .liTabActive {
+  font-weight: bold;
+  color: black;
+  border-radius: 5px;
+  background-color: white;
+  min-width: 80px;
+  cursor: pointer;
+  box-shadow: 0 0 9px white;
+  line-height: 20px;
+  padding: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+.navContainer .navUl .liTabActive:hover {
+  box-shadow: none;
+}
+
+@media screen and (max-width: 991px) {
+  .navContainer {
+    display: flex;
+    align-items: center;
+    position: sticky;
+    justify-content: space-between;
+    height: 70px;
+    top: 0;
+    width: 100%;
+    z-index: 888 !important;
+    background-color: #3b1f88;
+    box-shadow: 0 5px 8px rgb(37, 38, 49);
+  }
+  .navContainer h2 {
+    position: relative;
+    left: 20px;
+    font-size: 18px;
+    color: white;
+    margin-left: 10px;
+    text-shadow: 0 0 8px white;
+  }
+  .navContainer h2 strong {
+    height: 40px;
+    width: 40px;
+    padding-top: 5px;
+    text-shadow: none;
+    background-color: #3b1f88;
+    border: 3px solid white;
+    color: white;
+    text-align: center;
+    font-weight: bold;
+    border-radius: 50%;
+  }
+  .navContainer .navIcon {
+    cursor: pointer;
+    overflow: hidden;
+    height: 45px;
+    width: 50px;
+    border-radius: 10px;
+    background-color: white;
+    display: flex;
+    position: relative;
+    right: 30px;
+    align-items: center;
+    justify-content: center;
+    /*/ Old one */
+    /* display: block;
+    font-size: 17pt;
+    cursor: pointer;
+    position: relative;
+    color: white;
+    right: 50px;
+    margin-right: 0; */
+    /* opacity: 0.8; */
+    transition: opacity 600ms ease;
+  }
+  .navContainer .navIconActive {
+    cursor: pointer;
+    overflow: hidden;
+    box-shadow: 0 0 9px white;
+    height: 45px;
+    width: 50px;
+    border-radius: 10px;
+    background-color: white;
+    display: flex;
+    position: relative;
+    right: 30px;
+    align-items: center;
+    justify-content: center;
+    transition: opacity 600ms ease;
+  }
+  .navIcon span {
+    position: absolute;
+    width: 33px;
+    height: 4px;
+    background-color: #3b1f88;
+    border-radius: 4px;
+    transition: 0.5s;
+  }
+  .navIcon span:nth-child(1) {
+    transform: translateY(-10px);
+    transition-delay: 0.125s;
+    width: 25px;
+    left: 8.5px;
+  }
+  .navIcon span:nth-child(2) {
+    transition-delay: 0.125s;
+    transform: translateY(10px);
+    width: 20px;
+    left: 8.5px;
+  }
+  /* /Active Nav Menu */
+  .navIconActive span {
+    position: absolute;
+    width: 33px;
+    height: 4px;
+    background-color: #3b1f88;
+    border-radius: 4px;
+    transition: 0.5s;
+  }
+  .navIconActive span:nth-child(3) {
+    transform: translateX(60px);
+  }
+  .navIconActive span:nth-child(1) {
+    transform: translateY(0) rotate(45deg);
+    width: 33px;
+    left: 8.5px;
+  }
+  .navIconActive span:nth-child(2) {
+    transform: translateY(0) rotate(315deg);
+    width: 33px;
+    left: 8.5px;
+  }
+  /* .navContainer .navIcon:focus,
+  .navContainer .navIcon:hover {
+    box-shadow: 0 0 9px white;
+    
+    filter: drop-shadow(2px 2px 5px white);
+    opacity: 1;
+  } */
+  .navContainer .navUl {
+    position: absolute;
+    top: 100%;
+    overflow: hidden;
+    width: 100%;
+    list-style-type: none;
+    transform: translateX(-200%);
+    display: flex;
+    flex-direction: column;
+    gap: 2ch;
+    background-color: #3b1f88;
+    transition-property: transform, display;
+    transition: 700ms ease-in-out;
+  }
+  .navContainer .navUlActive {
+    border-top: 2px solid white;
+    position: absolute;
+    top: 100%;
+    width: 100%;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+    height: 310px;
+    color: white;
+    font-weight: bold;
+    list-style-type: none;
+    z-index: 999 !important;
+    transform: translateX(0);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 2ch;
+    background-color: #3b1f88;
+    transition: 700ms ease-in;
+    transition-property: transform, display;
+    padding: 20px;
+    box-shadow: 0 5px 8px rgb(37, 38, 49);
+  }
+  .navContainer .navUlActive .liTab {
+    margin-left: 30px;
+    cursor: pointer;
+    width: 50%;
+    text-shadow: 0 0 4px white;
+    line-height: 20px;
+    padding: 5px;
+    display: flex;
+    gap: 4ch;
+    align-items: center;
+  }
+  .navContainer .navUlActive .liTab:hover {
+    background-color: white;
+    color: black;
+    border-radius: 5px;
+  }
+  .navContainer .navUlActive .liTab a {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 4ch;
+  }
+  /* .navContainer > .navUl > .liTab > a {
+    opacity: 0;
+  } */
+  .navContainer .navUlActive .liTabActive {
+    /* color: black;
+    border-radius: 5px;
+    background-color: white;
+    min-width: 80px;
+    cursor: pointer;
+    box-shadow: 0 0 9px white;
+    line-height: 20px;
+    padding: 5px;
+    display: flex;
+    align-items: center; */
+
+    margin-left: 30px;
+    cursor: pointer;
+    width: 50%;
+    border-radius: 5px;
+    color: black;
+    text-shadow: 0 0 4px white;
+    line-height: 20px;
+    padding: 5px;
+    display: flex;
+    gap: 4ch;
+    align-items: center;
+    background-color: white;
+  }
+
+  .navContainer .navUlActive .liTabActive:hover {
+    box-shadow: none;
+  }
+  .navContainer .navUlActive .liTabActive a {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 4ch;
+  }
 }

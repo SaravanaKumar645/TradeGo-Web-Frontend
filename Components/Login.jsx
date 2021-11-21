@@ -18,7 +18,7 @@ const Login = () => {
     e.preventDefault();
     setLoading(true);
     axios({
-      url: "https://tradego-web-server.herokuapp.com/api/login-user",
+      url: "http://localhost:4000/api/login-user",
       method: "POST",
       data: { email: email, password: password },
     })
