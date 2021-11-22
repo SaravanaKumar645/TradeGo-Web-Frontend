@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import isAuthenticated from "../../Authentication/authCheck";
 import styles from "../../styles/Profile.module.css";
 
-const Profile = () => {
+const Profile = ({ isNavOpen }) => {
   const [currentUser, setCurrentUser] = useState([]);
   useEffect(async () => {
     const user = await isAuthenticated();
@@ -12,7 +12,12 @@ const Profile = () => {
   }, []);
   console.log(currentUser);
   return (
-    <div className={styles.container}>
+    <div
+      className={
+        isNavOpen ? styles["containerTopChanged"] : styles["container"]
+      }
+      style={{ marginTop: isNavOpen ? "320px" : "" }}
+    >
       <div className={styles.profileBox}>
         <div className={styles.title}>
           <div className={styles.i}>

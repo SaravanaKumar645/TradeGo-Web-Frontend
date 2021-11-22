@@ -82,6 +82,13 @@
 /* *New Style */
 /* / */
 .container {
+  transition: margin-top 800ms ease-in;
+}
+.containerTopChanged {
+  transition: margin-top 450ms ease-out;
+}
+.container,
+.containerTopChanged {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -89,7 +96,8 @@
   min-height: 90.5vh;
   background-color: rgb(252, 242, 223);
 }
-.container .profileBox {
+.container .profileBox,
+.containerTopChanged .profileBox {
   height: max-content;
   width: 650px;
   border-radius: 5px;

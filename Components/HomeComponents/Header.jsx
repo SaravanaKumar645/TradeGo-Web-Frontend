@@ -61,7 +61,7 @@ const Header = ({ handleOpenNavbar }) => {
         <strong>{String(currentUser["name"]).charAt(0)}</strong>
         Welcome
         <BootstrapTooltip title={currentUser.email || "Null"}>
-          <span>{currentUser.name} !</span>
+          <span style={{ cursor: "pointer" }}>{currentUser.name} !</span>
         </BootstrapTooltip>
       </h2>
       {/* <FontAwesomeIcon
@@ -109,7 +109,7 @@ const Header = ({ handleOpenNavbar }) => {
             <a>{openNav && <FontAwesomeIcon icon={faArchive} />}My Products</a>
           </li>
         </Link>
-        <Link href="#">
+        <Link href="/trade-go/myCart">
           <li
             className={
               tabPath === "/trade-go/myCart"
@@ -120,7 +120,7 @@ const Header = ({ handleOpenNavbar }) => {
             <a>{openNav && <FontAwesomeIcon icon={faShoppingCart} />}Cart</a>
           </li>
         </Link>
-        <Link href="#">
+        <Link href="/trade-go/myOrders">
           <li
             className={
               tabPath === "/trade-go/myOrders"
@@ -131,7 +131,7 @@ const Header = ({ handleOpenNavbar }) => {
             <a>{openNav && <FontAwesomeIcon icon={faShoppingBag} />}Orders</a>
           </li>
         </Link>
-        <Link href="#">
+        <Link href="/trade-go/myProfile">
           <li
             className={
               tabPath === "/trade-go/myProfile"
