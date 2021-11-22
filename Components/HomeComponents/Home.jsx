@@ -1,14 +1,53 @@
-import React from "react";
+import React, { useState } from "react";
 import styles from "../../styles/Home.module.css";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faSearch, faTimes } from "@fortawesome/free-solid-svg-icons";
+
 const Home = ({ isNavOpen }) => {
+  const [expandSearch, setExpandSearch] = useState(false);
   return (
     <div
-      style={{ marginTop: isNavOpen ? "350px" : "" }}
       className={
         isNavOpen ? styles["containerTopChanged"] : styles["container"]
       }
+      style={{ marginTop: isNavOpen ? "320px" : "" }}
     >
-      <p>Hello</p>
+      <header className={styles.title}>
+        <h2 className={expandSearch ? styles["topProducts"] : ""}>
+          TOP PRODUCTS
+        </h2>
+        <div className={styles.searchInputDiv}>
+          <FontAwesomeIcon
+            icon={expandSearch ? faTimes : faSearch}
+            className={
+              expandSearch ? styles["searchIconCollapse"] : styles["searchIcon"]
+            }
+            onClick={() => setExpandSearch((value) => !value)}
+          />
+
+          <input
+            className={
+              expandSearch ? styles["searchInputActive"] : styles["searchInput"]
+            }
+            type="search"
+            placeholder="Search products ..."
+          />
+        </div>
+      </header>
+      <ul className={styles.productList}>
+        <li>Product 1</li>
+        <li>Product 1</li>
+        <li>Product 1</li>
+        <li>Product 1</li>
+        <li>Product 1</li>
+        <li>Product 1</li>
+        <li>Product 1</li>
+        <li>Product 1</li>
+        <li>Product 1</li>
+        <li>Product 1</li>
+        <li>Product 1</li>
+        <li>Product 1</li>
+      </ul>
     </div>
   );
 };

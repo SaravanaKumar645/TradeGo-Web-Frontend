@@ -1,5 +1,6 @@
 import React from "react";
 import styles from "./MyProducts.module.css";
+import ProdcutAddForm from "./ProdcutAddForm";
 
 const MyProducts = ({ isNavOpen }) => {
   return (
@@ -7,9 +8,26 @@ const MyProducts = ({ isNavOpen }) => {
       className={
         isNavOpen ? styles["containerTopChanged"] : styles["container"]
       }
-      style={{ marginTop: isNavOpen ? "350px" : "" }}
+      style={{ marginTop: isNavOpen ? "320px" : "" }}
     >
-      <p>My product</p>
+      <header className={styles.title}>
+        <h2>MY PRODUCTS</h2>
+        <button>Add Your Products</button>
+      </header>
+      <ul className={styles.productList}>
+        <li>Product 1</li>
+        <li>Product 1</li>
+        <li>Product 1</li>
+        <li>Product 1</li>
+        <li>Product 1</li>
+        <li>Product 1</li>
+        <li>Product 1</li>
+        <li>Product 1</li>
+        <li>Product 1</li>
+        <li>Product 1</li>
+        <li>Product 1</li>
+        <li>Product 1</li>
+      </ul>
     </div>
   );
 };

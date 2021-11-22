@@ -4,3 +4,253 @@
 .containerTopChanged {
   transition: margin-top 450ms ease-out;
 }
+.container,
+.containerTopChanged {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  z-index: 999 !important;
+  min-height: calc(100vh - 90px);
+  background-color: rgb(222, 222, 228);
+}
+
+.container .title,
+.containerTopChanged .title {
+  position: sticky;
+  top: 90px;
+  z-index: 100;
+  display: flex;
+  height: 70px;
+  padding-top: 16px;
+  background-color: white;
+  width: 100%;
+  padding-left: 140px;
+  padding-right: 140px;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 3px solid black;
+}
+.searchInputDiv {
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+}
+.searchInputDiv .searchIcon {
+  transition-delay: 0.225s;
+  transition-property: transform, border-radius;
+  transition: 400ms ease-out;
+  background-color: #3b1f88;
+  padding: 8px;
+  height: 38px;
+  transition: transform 400ms ease;
+  transform: translateX(245px);
+  width: 70px;
+  cursor: pointer;
+  color: white;
+  border-radius: 7px;
+}
+.searchInputDiv .searchInput {
+  transition-property: transform;
+  transition: 400ms ease-out;
+  transform: translateX(350px);
+  padding: 9px;
+  font-size: 12pt;
+  outline: none;
+  border: 2px solid #3b1f88;
+  color: black;
+  text-shadow: 0 0 7px white;
+  background-color: white;
+  width: 250px;
+  height: 38px;
+  opacity: 0;
+  border-radius: 10px;
+}
+
+.searchInputDiv .searchIconCollapse {
+  transition-property: transform, border-bottom-left-radius,
+    border-top-left-radius;
+  transition: 400ms ease-in;
+  transform: translateX(0);
+  background-color: #3b1f88;
+  padding: 8px;
+  height: 38px;
+  width: 70px;
+  cursor: pointer;
+  color: white;
+  border-bottom-left-radius: 10px;
+  border-top-left-radius: 10px;
+}
+.searchInputDiv .searchInputActive {
+  transition-property: transform, border-bottom-right-radius,
+    border-top-right-radius;
+  transition: 400ms ease-in;
+  transform: translateX(0);
+  padding: 9px;
+  font-size: 12pt;
+  outline: none;
+  border: 2px solid #3b1f88;
+  color: black;
+  text-shadow: 0 0 7px white;
+  background-color: white;
+  width: 250px;
+  height: 38px;
+  border-right: 4px solid #3b1f88;
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
+}
+
+.productList {
+  display: grid;
+  padding-top: 30px;
+  grid-template-columns: 1fr 1fr 1fr;
+  list-style-type: none;
+  align-items: center;
+  justify-content: center;
+  gap: 3ch;
+}
+.productList li {
+  height: 200px;
+  width: 450px;
+  cursor: pointer;
+  background-color: white;
+  border: 3px solid black;
+  border-radius: 10px;
+}
+
+/* ?For Smaller Screens */
+@media screen and (max-width: 991px) {
+  .container {
+    transition: margin-top 800ms ease-in;
+  }
+  .containerTopChanged {
+    transition: margin-top 450ms ease-out;
+  }
+  .container,
+  .containerTopChanged {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    min-height: calc(100vh - 70px);
+    background-color: rgb(222, 222, 228);
+    z-index: 999 !important;
+  }
+
+  .container .title,
+  .containerTopChanged .title {
+    position: relative;
+    top: 0;
+    z-index: 100;
+    display: flex;
+    height: 70px;
+    padding-top: 16px;
+    background-color: white;
+    width: 100%;
+    padding-left: 20px;
+    padding-right: 20px;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 3px solid black;
+  }
+  .title h2 {
+    transition-property: all;
+    transition-delay: 1s;
+    transition: 400ms ease-in;
+    font-size: 1rem;
+    width: 200px;
+  }
+  .title .topProducts {
+    transition-property: all;
+    transition: 400ms ease-out;
+    transform: translateX(-500px);
+    width: 0;
+    font-size: 1rem;
+  }
+  .searchInputDiv {
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+  }
+  .searchInputDiv .searchIcon {
+    transition-property: transform, border-radius, width;
+    transition: 400ms ease-out;
+    background-color: #3b1f88;
+    padding: 8px;
+    height: 38px;
+    width: 50px;
+    transform: translateX(150px);
+    cursor: pointer;
+    color: white;
+    border-radius: 7px;
+  }
+  .searchInputDiv .searchInput {
+    transition-property: transform;
+    transition: 400ms ease-out;
+    transform: translateX(400px);
+    padding: 9px;
+    font-size: 12pt;
+    outline: none;
+    border: 2px solid #3b1f88;
+    color: black;
+    text-shadow: 0 0 7px white;
+    background-color: white;
+    width: 250px;
+    height: 38px;
+    opacity: 0;
+    border-radius: 10px;
+  }
+
+  .searchInputDiv .searchIconCollapse {
+    transition-property: transform, border-bottom-left-radius,
+      border-top-left-radius;
+    transition: 400ms ease-out;
+    transform: translateX(0);
+    background-color: #3b1f88;
+    padding: 8px;
+    height: 38px;
+    width: 50px;
+    cursor: pointer;
+    color: white;
+    border-bottom-left-radius: 10px;
+    border-top-left-radius: 10px;
+  }
+  .searchInputDiv .searchInputActive {
+    transition-property: transform, border-bottom-right-radius,
+      border-top-right-radius;
+    transition: 400ms ease-in;
+    transform: translateX(0);
+    padding: 9px;
+    font-size: 12pt;
+    outline: none;
+    border: 2px solid #3b1f88;
+    color: black;
+    text-shadow: 0 0 7px white;
+    background-color: white;
+    width: 283px;
+    height: 38px;
+    border-right: 4px solid #3b1f88;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+  }
+
+  .productList {
+    display: grid;
+    position: relative;
+    top: 20px;
+    grid-template-columns: 1fr;
+    list-style-type: none;
+    align-items: center;
+    justify-content: center;
+    gap: 3ch;
+    margin-bottom: 70px;
+  }
+  .productList li {
+    height: 190px;
+    width: 340px;
+    cursor: pointer;
+    background-color: white;
+    border: 3px solid black;
+    border-radius: 10px;
+  }
+}
